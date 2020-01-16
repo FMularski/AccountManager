@@ -90,6 +90,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBManager.cs" />
+    <Compile Include="FormUtilities.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
