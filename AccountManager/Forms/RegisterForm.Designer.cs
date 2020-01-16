@@ -40,7 +40,7 @@
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.PinTextBox = new System.Windows.Forms.TextBox();
             this.PinLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.RegisterButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // RegistrationLabel
@@ -145,16 +145,16 @@
             this.PinLabel.TabIndex = 9;
             this.PinLabel.Text = "PIN:";
             // 
-            // button1
+            // RegisterButton
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(136, 372);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 31);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Register";
-            this.button1.UseVisualStyleBackColor = false;
+            this.RegisterButton.BackColor = System.Drawing.Color.White;
+            this.RegisterButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RegisterButton.Location = new System.Drawing.Point(136, 372);
+            this.RegisterButton.Name = "RegisterButton";
+            this.RegisterButton.Size = new System.Drawing.Size(113, 31);
+            this.RegisterButton.TabIndex = 11;
+            this.RegisterButton.Text = "Register";
+            this.RegisterButton.UseVisualStyleBackColor = false;
             // 
             // RegisterForm
             // 
@@ -162,7 +162,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightYellow;
             this.ClientSize = new System.Drawing.Size(391, 426);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.PinTextBox);
             this.Controls.Add(this.PinLabel);
             this.Controls.Add(this.ConfirmTextBox);
@@ -195,6 +195,6 @@
         private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.TextBox PinTextBox;
         private System.Windows.Forms.Label PinLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button RegisterButton;
     }
 }

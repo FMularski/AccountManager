@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
+
 
 namespace AccountManager
 {
     public partial class RegisterForm : Form
     {
+
         public RegisterForm()
         {
             InitializeComponent();
