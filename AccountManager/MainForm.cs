@@ -19,22 +19,17 @@ namespace AccountManager
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            foreach (Control control in Controls )
-            {
-                if ( control.GetType() == typeof(MdiClient) ||
-                    control.GetType() == typeof(Label))
-                {
-                    control.BackColor = Color.LightYellow;
-                }
-            }
+
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void DontHaveAccButton_Click(object sender, EventArgs e)
         {
-
+            RegisterForm rf = new RegisterForm();
+            DontHaveAccButton.Enabled = false;
+            rf.Show();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void LogInButton_Click(object sender, EventArgs e)
         {
 
         }

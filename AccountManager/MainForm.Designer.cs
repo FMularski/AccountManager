@@ -29,88 +29,102 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.LoginLabel = new System.Windows.Forms.Label();
+            this.PasswordLabel = new System.Windows.Forms.Label();
+            this.LoginTextBox = new System.Windows.Forms.TextBox();
+            this.PasswordTextBox = new System.Windows.Forms.TextBox();
+            this.DontHaveAccButton = new System.Windows.Forms.Button();
+            this.LogInButton = new System.Windows.Forms.Button();
+            this.ForgotPasswordLinkLabel = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
-            // label3
+            // LoginLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(333, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 21);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Login:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.LoginLabel.AutoSize = true;
+            this.LoginLabel.BackColor = System.Drawing.Color.LightYellow;
+            this.LoginLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LoginLabel.Location = new System.Drawing.Point(333, 78);
+            this.LoginLabel.Name = "LoginLabel";
+            this.LoginLabel.Size = new System.Drawing.Size(55, 21);
+            this.LoginLabel.TabIndex = 3;
+            this.LoginLabel.Text = "Login:";
             // 
-            // label4
+            // PasswordLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(334, 149);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 21);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Password:";
+            this.PasswordLabel.AutoSize = true;
+            this.PasswordLabel.BackColor = System.Drawing.Color.LightYellow;
+            this.PasswordLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.PasswordLabel.Location = new System.Drawing.Point(334, 140);
+            this.PasswordLabel.Name = "PasswordLabel";
+            this.PasswordLabel.Size = new System.Drawing.Size(86, 21);
+            this.PasswordLabel.TabIndex = 4;
+            this.PasswordLabel.Text = "Password:";
             // 
-            // textBox1
+            // LoginTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(337, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 26);
-            this.textBox1.TabIndex = 5;
+            this.LoginTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LoginTextBox.Location = new System.Drawing.Point(337, 102);
+            this.LoginTextBox.Name = "LoginTextBox";
+            this.LoginTextBox.Size = new System.Drawing.Size(128, 26);
+            this.LoginTextBox.TabIndex = 5;
             // 
-            // textBox2
+            // PasswordTextBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(337, 173);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(128, 26);
-            this.textBox2.TabIndex = 6;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.PasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.PasswordTextBox.Location = new System.Drawing.Point(337, 164);
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.Size = new System.Drawing.Size(128, 26);
+            this.PasswordTextBox.TabIndex = 6;
+            this.PasswordTextBox.UseSystemPasswordChar = true;
             // 
-            // button1
+            // DontHaveAccButton
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(337, 327);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 43);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Don\'t have account yet?";
-            this.button1.UseVisualStyleBackColor = false;
+            this.DontHaveAccButton.BackColor = System.Drawing.Color.White;
+            this.DontHaveAccButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.DontHaveAccButton.Location = new System.Drawing.Point(337, 327);
+            this.DontHaveAccButton.Name = "DontHaveAccButton";
+            this.DontHaveAccButton.Size = new System.Drawing.Size(128, 43);
+            this.DontHaveAccButton.TabIndex = 7;
+            this.DontHaveAccButton.Text = "Don\'t have an account yet?";
+            this.DontHaveAccButton.UseVisualStyleBackColor = false;
+            this.DontHaveAccButton.Click += new System.EventHandler(this.DontHaveAccButton_Click);
             // 
-            // button2
+            // LogInButton
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(338, 225);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 28);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Log in";
-            this.button2.UseVisualStyleBackColor = false;
+            this.LogInButton.BackColor = System.Drawing.Color.White;
+            this.LogInButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogInButton.Location = new System.Drawing.Point(337, 277);
+            this.LogInButton.Name = "LogInButton";
+            this.LogInButton.Size = new System.Drawing.Size(127, 28);
+            this.LogInButton.TabIndex = 8;
+            this.LogInButton.Text = "Log in";
+            this.LogInButton.UseVisualStyleBackColor = false;
+            this.LogInButton.Click += new System.EventHandler(this.LogInButton_Click);
+            // 
+            // ForgotPasswordLinkLabel
+            // 
+            this.ForgotPasswordLinkLabel.AutoSize = true;
+            this.ForgotPasswordLinkLabel.Location = new System.Drawing.Point(335, 193);
+            this.ForgotPasswordLinkLabel.Name = "ForgotPasswordLinkLabel";
+            this.ForgotPasswordLinkLabel.Size = new System.Drawing.Size(91, 13);
+            this.ForgotPasswordLinkLabel.TabIndex = 9;
+            this.ForgotPasswordLinkLabel.TabStop = true;
+            this.ForgotPasswordLinkLabel.Text = "Forgot password?";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.LightYellow;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.ForgotPasswordLinkLabel);
+            this.Controls.Add(this.LogInButton);
+            this.Controls.Add(this.DontHaveAccButton);
+            this.Controls.Add(this.PasswordTextBox);
+            this.Controls.Add(this.LoginTextBox);
+            this.Controls.Add(this.PasswordLabel);
+            this.Controls.Add(this.LoginLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Text = "Account Manager";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -120,12 +134,13 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label LoginLabel;
+        private System.Windows.Forms.Label PasswordLabel;
+        private System.Windows.Forms.TextBox LoginTextBox;
+        private System.Windows.Forms.TextBox PasswordTextBox;
+        private System.Windows.Forms.Button DontHaveAccButton;
+        private System.Windows.Forms.Button LogInButton;
+        private System.Windows.Forms.LinkLabel ForgotPasswordLinkLabel;
     }
 }
 
