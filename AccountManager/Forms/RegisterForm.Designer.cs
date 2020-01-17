@@ -134,6 +134,7 @@
             this.PinTextBox.Name = "PinTextBox";
             this.PinTextBox.Size = new System.Drawing.Size(147, 23);
             this.PinTextBox.TabIndex = 10;
+            this.PinTextBox.UseSystemPasswordChar = true;
             // 
             // PinLabel
             // 
@@ -175,9 +176,13 @@
             this.Controls.Add(this.LoginTextBox);
             this.Controls.Add(this.LoginLabel);
             this.Controls.Add(this.RegistrationLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RegisterForm";
             this.Text = "Register";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

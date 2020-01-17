@@ -14,5 +14,11 @@ namespace AccountManager
             foreach (TextBox field in fields)
                 field.Text = "";
         }
+
+        public static void EnableButtons(params Button[] buttons)
+        {
+            foreach (Button button in buttons)
+                button.Enabled = true;
+        }
     }
 }

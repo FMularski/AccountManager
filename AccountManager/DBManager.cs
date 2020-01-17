@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using System.Windows.Forms;
 
 namespace AccountManager
 {
@@ -32,6 +33,25 @@ namespace AccountManager
             }
 
             Connection.Close();
+        }
+
+        public static List<string> GetUsers(TextBox t)
+        {
+            Connection.Open();
+            List<string> users = new List<string>();
+
+            using (SQLiteCommand command = Connection.CreateCommand())
+            {
+                command.CommandText = "SELECT Login FROM Users";
+                command.CommandType = System.Data.CommandType.Text;
+                SQLiteDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                    users.Add(reader["Login"].ToString());
+            }
+
+            Connection.Close();
+            return users;
         }
     }
 }

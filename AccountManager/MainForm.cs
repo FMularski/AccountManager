@@ -24,7 +24,7 @@ namespace AccountManager
 
         private void DontHaveAccButton_Click(object sender, EventArgs e)
         {
-            RegisterForm rf = new RegisterForm();
+            RegisterForm rf = new RegisterForm(DontHaveAccButton);
             DontHaveAccButton.Enabled = false;
             rf.Show();
         }
