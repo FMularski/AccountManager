@@ -32,5 +32,11 @@ namespace AccountManager
             this.Close();
             _MainForm.Close();
         }
+
+        private void LogOutButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            _MainForm._LoginForm.Show();
+        }
     }
 }

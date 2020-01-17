@@ -13,7 +13,7 @@ namespace AccountManager.Forms
     public partial class MainForm : Form
     {
         private User LoggedUser;
-        private LoginForm _LoginForm;
+        public LoginForm _LoginForm;
 
         public MainForm(LoginForm loginForm, User loggedUser)
         {

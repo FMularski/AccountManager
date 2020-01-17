@@ -49,10 +49,10 @@
             // AddAccountButton
             // 
             this.AddAccountButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.AddAccountButton.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AddAccountButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.AddAccountButton.Location = new System.Drawing.Point(12, 34);
             this.AddAccountButton.Name = "AddAccountButton";
-            this.AddAccountButton.Size = new System.Drawing.Size(128, 25);
+            this.AddAccountButton.Size = new System.Drawing.Size(128, 33);
             this.AddAccountButton.TabIndex = 1;
             this.AddAccountButton.Text = "+ Add Account";
             this.AddAccountButton.UseVisualStyleBackColor = false;
@@ -60,10 +60,10 @@
             // ExportButton
             // 
             this.ExportButton.BackColor = System.Drawing.Color.White;
-            this.ExportButton.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ExportButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ExportButton.Location = new System.Drawing.Point(146, 34);
             this.ExportButton.Name = "ExportButton";
-            this.ExportButton.Size = new System.Drawing.Size(128, 25);
+            this.ExportButton.Size = new System.Drawing.Size(128, 33);
             this.ExportButton.TabIndex = 2;
             this.ExportButton.Text = "Export as txt";
             this.ExportButton.UseVisualStyleBackColor = false;
@@ -71,10 +71,10 @@
             // SettingsButton
             // 
             this.SettingsButton.BackColor = System.Drawing.Color.White;
-            this.SettingsButton.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SettingsButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.SettingsButton.Location = new System.Drawing.Point(660, 34);
             this.SettingsButton.Name = "SettingsButton";
-            this.SettingsButton.Size = new System.Drawing.Size(128, 25);
+            this.SettingsButton.Size = new System.Drawing.Size(128, 33);
             this.SettingsButton.TabIndex = 3;
             this.SettingsButton.Text = "Settings";
             this.SettingsButton.UseVisualStyleBackColor = false;
@@ -83,9 +83,9 @@
             // AccountsPanel
             // 
             this.AccountsPanel.AutoScroll = true;
-            this.AccountsPanel.Location = new System.Drawing.Point(12, 65);
+            this.AccountsPanel.Location = new System.Drawing.Point(12, 73);
             this.AccountsPanel.Name = "AccountsPanel";
-            this.AccountsPanel.Size = new System.Drawing.Size(776, 373);
+            this.AccountsPanel.Size = new System.Drawing.Size(776, 365);
             this.AccountsPanel.TabIndex = 4;
             // 
             // MainForm

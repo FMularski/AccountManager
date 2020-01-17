@@ -125,6 +125,7 @@
             this.LogOutButton.TabIndex = 3;
             this.LogOutButton.Text = "Log Out";
             this.LogOutButton.UseVisualStyleBackColor = false;
+            this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
             // 
             // OtherGroupBox
             // 

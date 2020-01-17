@@ -59,6 +59,7 @@ namespace AccountManager
 
             EmailManager.SendEmail(loggedUser.Email, "alert", loggedUser.Login, DateTime.Now.ToString());
 
+            FormUtilities.ClearTextBoxes(LoginTextBox, PasswordTextBox);
             this.Hide();
             MainForm mf = new MainForm(this, loggedUser);
             mf.Show();
