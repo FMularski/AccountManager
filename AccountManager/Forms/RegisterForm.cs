@@ -71,18 +71,25 @@ namespace AccountManager
                 return;
             }
 
-            DBManager.AddUser(LoginTextBox.Text, EmailTextBox.Text, PasswordTextBox.Text, PinTextBox.Text);
-            MessageBox.Show($"User \'{login}\' has been created.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+
+            int verificationCode = new Random().Next(100000, 999999);
+
+
+            EmailManager.SendEmail(email, "greeting", login, verificationCode.ToString());
 
             FormUtilities.EnableButtons(ButtonToEnable);
             this.Close();
+            
+            VerificationCodeForm vcf = new VerificationCodeForm(verificationCode, ButtonToEnable, 
+                login, email, password, pin);
+            vcf.Show();
+            ButtonToEnable.Enabled = false;
         }
 
         private void RegisterForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to cancel creating a new user?", "Cancel",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) FormUtilities.EnableButtons(ButtonToEnable);
-            else e.Cancel = true;
+            FormUtilities.EnableButtons(ButtonToEnable);
         }
     }
 }

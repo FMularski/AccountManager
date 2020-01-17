@@ -33,3 +33,4 @@ C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\b
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.csproj.CopyComplete
+C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.VerificationCodeForm.resources
