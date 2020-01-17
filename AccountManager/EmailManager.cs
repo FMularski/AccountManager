@@ -53,13 +53,29 @@ namespace AccountManager
                         body = "Your request has been accepted. Please scroll down to see your password" +
                             ".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n" +
                             ".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n" +
-                            $"Password: {data[0]}";
+                            $"Password: {data[0]}\nAlways remember to keep your accounts safe!";
                             break;
                         case "alert":
                         subject = "Login detected";
                         body = $"Login to your account {data[0]} has been detected in Account Manager at {data[1]}.\n" +
                             "Always remember to keep your accounts safe!";
                             break;
+                    case "changePassword":
+                        subject = "Password change requested";
+                        body = $"You have requested password change for your {data[0]} account in Account Manager. " +
+                            "In order to do that enter the verification code in your client window. Please scroll down to see the verification code" +
+                            ".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n" +
+                            ".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n" +
+                            $"Verification code: {data[1]}\nAlways remember to keep your accounts safe!";
+                        break;
+                    case "changePin":
+                        subject = "PIN change requested";
+                        body = $"You have requested PIN change for your {data[0]} account in Account Manager. " +
+                            "In order to do that enter the verification code in your client window. Please scroll down to see the verification code" +
+                            ".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n" +
+                            ".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n" +
+                            $"Verification code: {data[1]}\nAlways remember to keep your accounts safe!";
+                        break;
                 }
 
                 mail.Subject = subject;

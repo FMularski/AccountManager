@@ -15,7 +15,9 @@ namespace AccountManager
         public enum Mode
         {
             Register, 
-            Reminder
+            Reminder,
+            ChangePassword,
+            ChangePin
         }
 
         private Mode _Mode;
@@ -25,7 +27,7 @@ namespace AccountManager
         public VerificationCodeForm( Mode mode, int code, Control[] controls, params string[] userData)
         {
             _Mode = mode;
-            DisabledControls = new Control[3];
+            DisabledControls = new Control[4];
             controls.CopyTo(DisabledControls, 0);
 
             VerificationCode = code;
@@ -38,11 +40,14 @@ namespace AccountManager
                 case Mode.Reminder:
                     _User = new User(userData[0], userData[1], userData[2], "");
                     break;
+                case Mode.ChangePassword:
+                    _User = new User(userData[0], "", "", "");
+                    break;
+                case Mode.ChangePin:
+                    _User = new User(userData[0], "", "", "");
+                    break;
             }
 
-
-            
-            
             InitializeComponent();
         }
 
@@ -64,6 +69,16 @@ namespace AccountManager
                         this.Close();
                         MessageBox.Show("Your password has been sent to your email address.", "Success", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
+                        break;
+                    case Mode.ChangePassword:
+                        this.Close();
+                        ChangePasswordForm cpf = new ChangePasswordForm(DisabledControls);
+                        cpf.Show();
+                        break;
+                    case Mode.ChangePin:
+                        this.Close();
+                        ChangePinForm _cpf = new ChangePinForm(DisabledControls);
+                        _cpf.Show();
                         break;
                 }
             }

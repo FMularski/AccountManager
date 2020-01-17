@@ -94,6 +94,7 @@
             this.ChangePinButton.TabIndex = 1;
             this.ChangePinButton.Text = "Change PIN";
             this.ChangePinButton.UseVisualStyleBackColor = false;
+            this.ChangePinButton.Click += new System.EventHandler(this.ChangePinButton_Click);
             // 
             // ChangePasswordButton
             // 
@@ -104,6 +105,7 @@
             this.ChangePasswordButton.TabIndex = 0;
             this.ChangePasswordButton.Text = "Change password";
             this.ChangePasswordButton.UseVisualStyleBackColor = false;
+            this.ChangePasswordButton.Click += new System.EventHandler(this.ChangePasswordButton_Click);
             // 
             // BackButton
             // 

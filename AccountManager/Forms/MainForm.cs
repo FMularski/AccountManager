@@ -42,7 +42,7 @@ namespace AccountManager.Forms
 
         private void SettingsButton_Click(object sender, EventArgs e)
         {
-            SettingsForm sf = new SettingsForm(this);
+            SettingsForm sf = new SettingsForm(this, LoggedUser);
             sf.Show();
             this.Hide();
         }
