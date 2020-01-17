@@ -36,3 +36,4 @@ C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\o
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.ForgotPasswordForm.resources
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.LoginForm.resources
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.Forms.MainForm.resources
+C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.SettingsForm.resources

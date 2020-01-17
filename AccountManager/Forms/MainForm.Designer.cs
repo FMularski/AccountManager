@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.LoggedInAsLabel = new System.Windows.Forms.Label();
+            this.AddAccountButton = new System.Windows.Forms.Button();
+            this.ExportButton = new System.Windows.Forms.Button();
+            this.SettingsButton = new System.Windows.Forms.Button();
+            this.AccountsPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // LoggedInAsLabel
@@ -42,12 +46,58 @@
             this.LoggedInAsLabel.TabIndex = 0;
             this.LoggedInAsLabel.Text = "Logged in as ";
             // 
+            // AddAccountButton
+            // 
+            this.AddAccountButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.AddAccountButton.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AddAccountButton.Location = new System.Drawing.Point(12, 34);
+            this.AddAccountButton.Name = "AddAccountButton";
+            this.AddAccountButton.Size = new System.Drawing.Size(128, 25);
+            this.AddAccountButton.TabIndex = 1;
+            this.AddAccountButton.Text = "+ Add Account";
+            this.AddAccountButton.UseVisualStyleBackColor = false;
+            // 
+            // ExportButton
+            // 
+            this.ExportButton.BackColor = System.Drawing.Color.White;
+            this.ExportButton.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ExportButton.Location = new System.Drawing.Point(146, 34);
+            this.ExportButton.Name = "ExportButton";
+            this.ExportButton.Size = new System.Drawing.Size(128, 25);
+            this.ExportButton.TabIndex = 2;
+            this.ExportButton.Text = "Export as txt";
+            this.ExportButton.UseVisualStyleBackColor = false;
+            // 
+            // SettingsButton
+            // 
+            this.SettingsButton.BackColor = System.Drawing.Color.White;
+            this.SettingsButton.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SettingsButton.Location = new System.Drawing.Point(660, 34);
+            this.SettingsButton.Name = "SettingsButton";
+            this.SettingsButton.Size = new System.Drawing.Size(128, 25);
+            this.SettingsButton.TabIndex = 3;
+            this.SettingsButton.Text = "Settings";
+            this.SettingsButton.UseVisualStyleBackColor = false;
+            this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
+            // 
+            // AccountsPanel
+            // 
+            this.AccountsPanel.AutoScroll = true;
+            this.AccountsPanel.Location = new System.Drawing.Point(12, 65);
+            this.AccountsPanel.Name = "AccountsPanel";
+            this.AccountsPanel.Size = new System.Drawing.Size(776, 373);
+            this.AccountsPanel.TabIndex = 4;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightYellow;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.AccountsPanel);
+            this.Controls.Add(this.SettingsButton);
+            this.Controls.Add(this.ExportButton);
+            this.Controls.Add(this.AddAccountButton);
             this.Controls.Add(this.LoggedInAsLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -64,5 +114,9 @@
         #endregion
 
         private System.Windows.Forms.Label LoggedInAsLabel;
+        private System.Windows.Forms.Button AddAccountButton;
+        private System.Windows.Forms.Button ExportButton;
+        private System.Windows.Forms.Button SettingsButton;
+        private System.Windows.Forms.Panel AccountsPanel;
     }
 }
