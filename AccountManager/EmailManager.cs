@@ -55,6 +55,11 @@ namespace AccountManager
                             ".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n" +
                             $"Password: {data[0]}";
                             break;
+                        case "alert":
+                        subject = "Login detected";
+                        body = $"Login to your account {data[0]} has been detected in Account Manager at {data[1]}.\n" +
+                            "Always remember to keep your accounts safe!";
+                            break;
                 }
 
                 mail.Subject = subject;

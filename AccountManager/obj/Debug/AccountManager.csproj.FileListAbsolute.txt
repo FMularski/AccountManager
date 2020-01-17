@@ -2,7 +2,6 @@ C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\b
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\bin\Debug\AccountManager.exe
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\bin\Debug\AccountManager.pdb
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.csprojAssemblyReference.cache
-C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.MainForm.resources
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.Properties.Resources.resources
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.csproj.GenerateResource.cache
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.exe
@@ -35,3 +34,5 @@ C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\b
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.csproj.CopyComplete
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.VerificationCodeForm.resources
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.ForgotPasswordForm.resources
+C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.LoginForm.resources
+C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.Forms.MainForm.resources
