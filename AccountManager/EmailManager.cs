@@ -37,9 +37,24 @@ namespace AccountManager
                             "entering verification code in your client window.\nPlease scroll down to see your code" +
                             ".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n" +
                             ".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n" +
-                            $"Verification code: {data[1]}\n Always remember to keep your account safe!";
+                            $"Verification code: {data[1]}\n Always remember to keep your accounts safe!";
 
                         break;
+                    case "forgot":
+                        subject = "Password reminder requested";
+                        body = $"You have requested a password reminder for your {data[0]} account. Please scroll down to see " +
+                            "the verification code and enter it in your client window. " +
+                            ".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n" +
+                            ".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n" +
+                            $"Verification code: {data[1]}\n Always remember to keep your accounts safe!";
+                        break;
+                    case "reminder":
+                        subject = "Password reminder request accepted";
+                        body = "Your request has been accepted. Please scroll down to see your password" +
+                            ".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n" +
+                            ".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n" +
+                            $"Password: {data[0]}";
+                            break;
                 }
 
                 mail.Subject = subject;

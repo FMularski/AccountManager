@@ -93,6 +93,12 @@
     <Compile Include="DBManager.cs" />
     <Compile Include="EmailManager.cs" />
     <Compile Include="EmailManagerAccountData.cs" />
+    <Compile Include="Forms\ForgotPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ForgotPasswordForm.Designer.cs">
+      <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUtilities.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -115,6 +121,9 @@
     <Compile Include="Forms\VerificationCodeForm.Designer.cs">
       <DependentUpon>VerificationCodeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\ForgotPasswordForm.resx">
+      <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

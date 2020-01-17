@@ -17,21 +17,25 @@ namespace AccountManager
             InitializeComponent();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void DontHaveAccButton_Click(object sender, EventArgs e)
         {
-            RegisterForm rf = new RegisterForm(DontHaveAccButton);
-            DontHaveAccButton.Enabled = false;
+            Control[] controlsToBeDisabled = new Control[] { DontHaveAccButton, ForgotPasswordLinkLabel, LogInButton };
+            RegisterForm rf = new RegisterForm(controlsToBeDisabled);
+            FormUtilities.DisableControls(DontHaveAccButton, ForgotPasswordLinkLabel, LogInButton);
             rf.Show();
         }
 
         private void LogInButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ForgotPasswordLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Control[] controlsToBeDisabled = new Control[] { DontHaveAccButton, ForgotPasswordLinkLabel, LogInButton };
+            ForgotPasswordForm fpf = new ForgotPasswordForm(controlsToBeDisabled);
+            FormUtilities.DisableControls(controlsToBeDisabled);
+            fpf.Show();
         }
     }
 }

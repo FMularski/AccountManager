@@ -110,6 +110,7 @@
             this.ForgotPasswordLinkLabel.TabIndex = 9;
             this.ForgotPasswordLinkLabel.TabStop = true;
             this.ForgotPasswordLinkLabel.Text = "Forgot password?";
+            this.ForgotPasswordLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ForgotPasswordLinkLabel_LinkClicked);
             // 
             // MainForm
             // 
@@ -130,7 +131,6 @@
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Text = "Account Manager";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

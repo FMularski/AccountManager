@@ -15,12 +15,13 @@ namespace AccountManager
 {
     public partial class RegisterForm : Form
     {
-        private Button ButtonToEnable;
+        private Control[] DisabledControls;
 
-        public RegisterForm(Button dontHaveAccButton)
+        public RegisterForm(Control[] controls)
         {
+            DisabledControls = new Control[3];
             InitializeComponent();
-            ButtonToEnable = dontHaveAccButton;
+            controls.CopyTo(DisabledControls, 0);
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
@@ -40,7 +41,7 @@ namespace AccountManager
             }
 
             /* CHECK IF LOGIN IS AVAILABLE */
-            if (DBManager.GetUsers(EmailTextBox).Contains(login))
+            if (DBManager.GetColumnValues("Users", "Login").Contains(login))
             {
                 MessageBox.Show($"Login \'{login}\' is already used.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 FormUtilities.ClearTextBoxes( LoginTextBox ,PasswordTextBox, ConfirmTextBox, PinTextBox);
@@ -77,19 +78,16 @@ namespace AccountManager
 
 
             EmailManager.SendEmail(email, "greeting", login, verificationCode.ToString());
-
-            FormUtilities.EnableButtons(ButtonToEnable);
             this.Close();
             
-            VerificationCodeForm vcf = new VerificationCodeForm(verificationCode, ButtonToEnable, 
-                login, email, password, pin);
+            VerificationCodeForm vcf = new VerificationCodeForm( VerificationCodeForm.Mode.Register, verificationCode, DisabledControls, login, email, password, pin);
             vcf.Show();
-            ButtonToEnable.Enabled = false;
+            FormUtilities.DisableControls(DisabledControls);
         }
 
         private void RegisterForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FormUtilities.EnableButtons(ButtonToEnable);
+            FormUtilities.EnableControls(DisabledControls);
         }
     }
 }

@@ -15,10 +15,16 @@ namespace AccountManager
                 field.Text = "";
         }
 
-        public static void EnableButtons(params Button[] buttons)
+        public static void EnableControls(params Control[] controls)
         {
-            foreach (Button button in buttons)
-                button.Enabled = true;
+            foreach (Control control in controls)
+                control.Enabled = true;
+        }
+
+        public static void DisableControls(params Control[] controls)
+        {
+            foreach (Control control in controls)
+                control.Enabled = false;
         }
     }
 }

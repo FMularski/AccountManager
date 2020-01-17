@@ -35,23 +35,47 @@ namespace AccountManager
             Connection.Close();
         }
 
-        public static List<string> GetUsers(TextBox t)
+        public static List<string> GetColumnValues(string table, string column)
         {
             Connection.Open();
-            List<string> users = new List<string>();
+            List<string> values = new List<string>();
 
             using (SQLiteCommand command = Connection.CreateCommand())
             {
-                command.CommandText = "SELECT Login FROM Users";
+                command.CommandText = "SELECT " + column + " FROM " + table;
                 command.CommandType = System.Data.CommandType.Text;
                 SQLiteDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
-                    users.Add(reader["Login"].ToString());
+                    values.Add(reader[column].ToString());
             }
 
             Connection.Close();
-            return users;
+            return values;
         }
+
+        public static string GetSingleValueWhere(string table, string column, string whereColumn, string value)
+        {
+            Connection.Open();
+
+            SQLiteDataReader reader = null;
+            List<string> val = new List<string>();
+
+            using(SQLiteCommand command = Connection.CreateCommand())
+            {
+                command.CommandText = "SELECT " + column + " FROM " + table + " WHERE " + whereColumn + " = @value";
+                command.Parameters.Add(new SQLiteParameter("@value") { Value = value });
+                command.CommandType = System.Data.CommandType.Text;
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
+                    val.Add(reader[column].ToString());
+            }
+
+            Connection.Close();
+            return val.First();
+        }
+
+
     }
 }

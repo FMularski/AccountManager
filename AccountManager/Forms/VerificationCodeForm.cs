@@ -12,16 +12,36 @@ namespace AccountManager
 {
     public partial class VerificationCodeForm : Form
     {
-        private int VerificationCode;
-        private Button ButtonToEnable;
-        private User UserToBeAdded;
-        public VerificationCodeForm(int code, Button button, params string[] userData)
+        public enum Mode
         {
-            ButtonToEnable = button;
-            ButtonToEnable.Enabled = false;
+            Register, 
+            Reminder
+        }
+
+        private Mode _Mode;
+        private int VerificationCode;
+        private User _User;
+        private Control[] DisabledControls;
+        public VerificationCodeForm( Mode mode, int code, Control[] controls, params string[] userData)
+        {
+            _Mode = mode;
+            DisabledControls = new Control[3];
+            controls.CopyTo(DisabledControls, 0);
+
             VerificationCode = code;
 
-            UserToBeAdded = new User(userData[0], userData[1], userData[2], userData[3]);
+            switch (_Mode)
+            {
+                case Mode.Register:
+                    _User = new User(userData[0], userData[1], userData[2], userData[3]);
+                    break;
+                case Mode.Reminder:
+                    _User = new User(userData[0], userData[1], userData[2], "");
+                    break;
+            }
+
+
+            
             
             InitializeComponent();
         }
@@ -32,9 +52,20 @@ namespace AccountManager
 
             if (enteredCode.Equals(VerificationCode.ToString()))
             {
-                DBManager.AddUser(UserToBeAdded.Login, UserToBeAdded.Email, UserToBeAdded.Password, UserToBeAdded.Pin);
-                this.Close();
-                MessageBox.Show($"User \'{UserToBeAdded.Login}\' has been created.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                switch (_Mode)
+                {
+                    case Mode.Register:
+                        DBManager.AddUser(_User.Login, _User.Email, _User.Password, _User.Pin);
+                        this.Close();
+                        MessageBox.Show($"User \'{_User.Login}\' has been created.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    case Mode.Reminder:
+                        EmailManager.SendEmail(_User.Email, "reminder", _User.Password);
+                        this.Close();
+                        MessageBox.Show("Your password has been sent to your email address.", "Success", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        break;
+                }
             }
             else
             {
@@ -45,7 +76,7 @@ namespace AccountManager
 
         private void VerificationCodeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FormUtilities.EnableButtons(ButtonToEnable);
+            FormUtilities.EnableControls(DisabledControls);
         }
     }
 }
