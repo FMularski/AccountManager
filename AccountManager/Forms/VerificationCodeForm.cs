@@ -72,12 +72,12 @@ namespace AccountManager
                         break;
                     case Mode.ChangePassword:
                         this.Close();
-                        ChangePasswordForm cpf = new ChangePasswordForm(DisabledControls);
+                        ChangePasswordForm cpf = new ChangePasswordForm( _User, DisabledControls);
                         cpf.Show();
                         break;
                     case Mode.ChangePin:
                         this.Close();
-                        ChangePinForm _cpf = new ChangePinForm(DisabledControls);
+                        ChangePinForm _cpf = new ChangePinForm( _User, DisabledControls);
                         _cpf.Show();
                         break;
                 }

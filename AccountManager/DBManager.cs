@@ -23,7 +23,7 @@ namespace AccountManager
                 string password = values[2];
                 string pin = values[3];
 
-                command.CommandText = "INSERT INTO USERS ('Login', 'Email', 'Password', 'Pin')" + 
+                command.CommandText = "INSERT INTO USERS ('Login', 'Email', 'Password', 'Pin')" +
                     "VALUES (@login, @email, @password, @pin)";
                 command.Parameters.Add(new SQLiteParameter("@login") { Value = login });
                 command.Parameters.Add(new SQLiteParameter("@email") { Value = email });
@@ -37,9 +37,10 @@ namespace AccountManager
 
         public static List<string> GetColumnValues(string table, string column)
         {
-            Connection.Open();
             List<string> values = new List<string>();
 
+            Connection.Open();
+            
             using (SQLiteCommand command = Connection.CreateCommand())
             {
                 command.CommandText = "SELECT " + column + " FROM " + table;
@@ -51,6 +52,7 @@ namespace AccountManager
             }
 
             Connection.Close();
+            
             return values;
         }
 
@@ -74,6 +76,22 @@ namespace AccountManager
 
             Connection.Close();
             return val.First();
+        }
+
+        public static void UpdateValueWhere(string table, string column, string newValue, string whereColumn, string whereValue)
+        {
+            Connection.Open();
+
+            using (SQLiteCommand command = Connection.CreateCommand())
+            {
+                command.CommandText = "UPDATE " + table + " SET " + column + " = @newvalue WHERE " + whereColumn + " = @value";
+                command.Parameters.Add(new SQLiteParameter("@newvalue") { Value = newValue });
+                command.Parameters.Add(new SQLiteParameter("@value") { Value = whereValue });
+                command.ExecuteNonQuery();
+            }
+
+            Connection.Close();
+            
         }
 
 
