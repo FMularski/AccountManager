@@ -72,7 +72,7 @@
             this.ExportButton.Name = "ExportButton";
             this.ExportButton.Size = new System.Drawing.Size(128, 33);
             this.ExportButton.TabIndex = 2;
-            this.ExportButton.Text = "Export";
+            this.ExportButton.Text = "Export data";
             this.ExportButton.UseVisualStyleBackColor = false;
             this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
             // 

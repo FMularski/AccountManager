@@ -157,6 +157,13 @@ namespace AccountManager.Forms
 
         private void ExportButton_Click(object sender, EventArgs e)
         {
+            Button editButton = sender as Button;
+
+            if (AccountsPanel.Controls.Count == 0)
+            {
+                MessageBox.Show("No data to export.", "Export data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
             int verificationCode = new Random().Next(100000, 999999);
 

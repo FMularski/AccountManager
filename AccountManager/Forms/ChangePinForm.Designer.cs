@@ -56,6 +56,7 @@
             this.ConfirmTextBox.Name = "ConfirmTextBox";
             this.ConfirmTextBox.Size = new System.Drawing.Size(174, 23);
             this.ConfirmTextBox.TabIndex = 14;
+            this.ConfirmTextBox.UseSystemPasswordChar = true;
             // 
             // ConfirmLabel
             // 
@@ -74,6 +75,7 @@
             this.NewPinTextBox.Name = "NewPinTextBox";
             this.NewPinTextBox.Size = new System.Drawing.Size(174, 23);
             this.NewPinTextBox.TabIndex = 12;
+            this.NewPinTextBox.UseSystemPasswordChar = true;
             // 
             // NewPinLabel
             // 
