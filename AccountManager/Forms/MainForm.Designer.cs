@@ -56,6 +56,7 @@
             this.AddAccountButton.TabIndex = 1;
             this.AddAccountButton.Text = "+ Add Account";
             this.AddAccountButton.UseVisualStyleBackColor = false;
+            this.AddAccountButton.Click += new System.EventHandler(this.AddAccountButton_Click);
             // 
             // ExportButton
             // 

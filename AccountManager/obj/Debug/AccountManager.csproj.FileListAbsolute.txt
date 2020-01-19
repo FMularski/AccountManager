@@ -39,3 +39,4 @@ C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\o
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.SettingsForm.resources
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.ChangePasswordForm.resources
 C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.ChangePinForm.resources
+C:\Users\filip\OneDrive\Pulpit\Studia\sem V\.net\AccountManager\AccountManager\obj\Debug\AccountManager.AccountForm.resources

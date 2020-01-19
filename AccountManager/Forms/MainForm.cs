@@ -46,5 +46,11 @@ namespace AccountManager.Forms
             sf.Show();
             this.Hide();
         }
+
+        private void AddAccountButton_Click(object sender, EventArgs e)
+        {
+            AccountForm af = new AccountForm();
+            af.Show();
+        }
     }
 }
