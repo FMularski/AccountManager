@@ -142,5 +142,19 @@ namespace AccountManager
             Connection.Close();
         }
 
+        public static void DeleteAccountById(int id)
+        {
+            Connection.Open();
+
+            using (SQLiteCommand command = Connection.CreateCommand())
+            {
+                command.CommandText = "DELETE FROM Accounts WHERE Id = @id";
+                command.Parameters.Add(new SQLiteParameter("@id") { Value = id });
+                command.ExecuteNonQuery();
+            }
+
+            Connection.Close();
+        }
+
     }
 }

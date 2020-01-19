@@ -72,8 +72,9 @@
             this.ExportButton.Name = "ExportButton";
             this.ExportButton.Size = new System.Drawing.Size(128, 33);
             this.ExportButton.TabIndex = 2;
-            this.ExportButton.Text = "Export as txt";
+            this.ExportButton.Text = "Export";
             this.ExportButton.UseVisualStyleBackColor = false;
+            this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
             // 
             // SettingsButton
             // 
@@ -129,7 +130,7 @@
             // 
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.PasswordLabel.Location = new System.Drawing.Point(503, 74);
+            this.PasswordLabel.Location = new System.Drawing.Point(476, 74);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(68, 16);
             this.PasswordLabel.TabIndex = 8;
@@ -138,7 +139,7 @@
             // EditButtonsLabel
             // 
             this.EditButtonsLabel.AutoSize = true;
-            this.EditButtonsLabel.Location = new System.Drawing.Point(645, 77);
+            this.EditButtonsLabel.Location = new System.Drawing.Point(612, 78);
             this.EditButtonsLabel.Name = "EditButtonsLabel";
             this.EditButtonsLabel.Size = new System.Drawing.Size(0, 13);
             this.EditButtonsLabel.TabIndex = 9;
@@ -146,7 +147,7 @@
             // DeleteButtonsLabel
             // 
             this.DeleteButtonsLabel.AutoSize = true;
-            this.DeleteButtonsLabel.Location = new System.Drawing.Point(722, 76);
+            this.DeleteButtonsLabel.Location = new System.Drawing.Point(689, 77);
             this.DeleteButtonsLabel.Name = "DeleteButtonsLabel";
             this.DeleteButtonsLabel.Size = new System.Drawing.Size(0, 13);
             this.DeleteButtonsLabel.TabIndex = 10;
@@ -173,7 +174,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Account Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);

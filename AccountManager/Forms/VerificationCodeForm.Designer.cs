@@ -82,7 +82,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VerificationCodeForm";
-            this.Text = "Verify email address";
+            this.Text = "Verification";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VerificationCodeForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

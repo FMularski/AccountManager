@@ -76,6 +76,14 @@ namespace AccountManager
                             ".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n" +
                             $"Verification code: {data[1]}\nAlways remember to keep your accounts safe!";
                         break;
+                    case "export":
+                        subject = "Data export requested";
+                        body = $"Data export has been requested for your {data[0]} account in AccountManager. " +
+                             "In order to do that enter the verification code in your client window. Please scroll down to see the verification code" +
+                            ".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n" +
+                            ".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n" +
+                            $"Verification code: {data[1]}\nAlways remember to keep your accounts safe!";
+                        break;
                 }
 
                 mail.Subject = subject;

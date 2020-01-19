@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace AccountManager.Forms
 {
@@ -109,9 +110,23 @@ namespace AccountManager.Forms
                 deleteButton.ForeColor = Color.White;
                 deleteButton.Location = new Point() { X = DeleteButtonsLabel.Location.X, Y = i * title.PreferredHeight * 2 };
                 deleteButton.Size = deleteButton.PreferredSize;
-                editButton.ImageIndex = Convert.ToInt32(ids[i]);
+                deleteButton.ImageIndex = Convert.ToInt32(ids[i]);
+                deleteButton.Click += DeleteButton_Click;
                 DisabledControls.Add(deleteButton);
                 AccountsPanel.Controls.Add(deleteButton);
+            }
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this account?", "Deleting account", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                DBManager.DeleteAccountById(button.ImageIndex);
+                UpdateAccountsDisplay();
             }
         }
 
@@ -137,6 +152,19 @@ namespace AccountManager.Forms
 
             PinForm pf = new PinForm(LoggedUser, password, DisabledControls, Password_Click);
             pf.Show();
+            FormUtilities.DisableControls(DisabledControls.ToArray());
+        }
+
+        private void ExportButton_Click(object sender, EventArgs e)
+        {
+
+            int verificationCode = new Random().Next(100000, 999999);
+
+            EmailManager.SendEmail(DBManager.GetSingleValueWhere("Users", "Email", "Login", LoggedUser.Login), "export", LoggedUser.Login, verificationCode.ToString());
+
+            VerificationCodeForm vcf = new VerificationCodeForm(VerificationCodeForm.Mode.Export, verificationCode, DisabledControls.ToArray(),
+                LoggedUser.Login);
+            vcf.Show();
             FormUtilities.DisableControls(DisabledControls.ToArray());
         }
     }

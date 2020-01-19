@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace AccountManager
 {
@@ -17,7 +18,8 @@ namespace AccountManager
             Register, 
             Reminder,
             ChangePassword,
-            ChangePin
+            ChangePin,
+            Export
         }
 
         private Mode _Mode;
@@ -27,7 +29,7 @@ namespace AccountManager
         public VerificationCodeForm( Mode mode, int code, Control[] controls, params string[] userData)
         {
             _Mode = mode;
-            DisabledControls = new Control[4];
+            DisabledControls = new Control[controls.Length];
             controls.CopyTo(DisabledControls, 0);
 
             VerificationCode = code;
@@ -44,6 +46,9 @@ namespace AccountManager
                     _User = new User(userData[0], "", "", "");
                     break;
                 case Mode.ChangePin:
+                    _User = new User(userData[0], "", "", "");
+                    break;
+                case Mode.Export:
                     _User = new User(userData[0], "", "", "");
                     break;
             }
@@ -79,6 +84,41 @@ namespace AccountManager
                         this.Close();
                         ChangePinForm _cpf = new ChangePinForm( _User, DisabledControls);
                         _cpf.Show();
+                        break;
+                    case Mode.Export:
+                        this.Close();
+                        SaveFileDialog sfd = new SaveFileDialog();
+                        sfd.ShowDialog();
+
+                        string path = sfd.FileName;
+
+                        List<string> titles = DBManager.GetColumnValuesWhere("Accounts", "Title", "UserId", DBManager.GetSingleValueWhere("Users", "Id", "Login", _User.Login).ToString());
+
+                        List<string> logins = DBManager.GetColumnValuesWhere("Accounts", "Login", "UserId", DBManager.GetSingleValueWhere("Users", "Id", "Login", _User.Login).ToString());
+
+                        List<string> emails = DBManager.GetColumnValuesWhere("Accounts", "Associated_Email", "UserId", DBManager.GetSingleValueWhere("Users", "Id", "Login", _User.Login).ToString());
+
+                        List<string> passwords = DBManager.GetColumnValuesWhere("Accounts", "Password", "UserId", DBManager.GetSingleValueWhere("Users", "Id", "Login", _User.Login).ToString());
+
+                        try
+                        {
+                            using (StreamWriter sw = new StreamWriter(path))
+                            {
+                                for (int i = 0; i < titles.Count; i++)
+                                {
+                                    string accountRowForFile = "Title: " + titles[i] + "\tLogin: " + logins[i] + "\tAssociated email: " +
+                                        emails[i] + "\tPassword: " + passwords[i];
+
+                                    sw.WriteLine(accountRowForFile);
+                                }
+                            }
+
+                            MessageBox.Show("Your data has been successfully exported.\n\nWarning: The exported file contains all of your accounts data. Be cautious when granting access to this file. Deleting the file\nfrom widely accessible disk space is recommended.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception) 
+                        {
+                            MessageBox.Show("Export has been cancelled.", "Export cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                         break;
                 }
             }
