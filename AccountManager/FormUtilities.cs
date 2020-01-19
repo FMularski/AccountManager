@@ -26,5 +26,6 @@ namespace AccountManager
             foreach (Control control in controls)
                 control.Enabled = false;
         }
+
     }
 }

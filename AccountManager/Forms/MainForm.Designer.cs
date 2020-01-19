@@ -34,6 +34,10 @@
             this.ExportButton = new System.Windows.Forms.Button();
             this.SettingsButton = new System.Windows.Forms.Button();
             this.AccountsPanel = new System.Windows.Forms.Panel();
+            this.TitleLabel = new System.Windows.Forms.Label();
+            this.LoginLabel = new System.Windows.Forms.Label();
+            this.AssociatedEmailLabel = new System.Windows.Forms.Label();
+            this.PasswordLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LoggedInAsLabel
@@ -84,10 +88,50 @@
             // AccountsPanel
             // 
             this.AccountsPanel.AutoScroll = true;
-            this.AccountsPanel.Location = new System.Drawing.Point(12, 73);
+            this.AccountsPanel.Location = new System.Drawing.Point(0, 94);
             this.AccountsPanel.Name = "AccountsPanel";
-            this.AccountsPanel.Size = new System.Drawing.Size(776, 365);
+            this.AccountsPanel.Size = new System.Drawing.Size(788, 344);
             this.AccountsPanel.TabIndex = 4;
+            // 
+            // TitleLabel
+            // 
+            this.TitleLabel.AutoSize = true;
+            this.TitleLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.TitleLabel.Location = new System.Drawing.Point(16, 74);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(34, 16);
+            this.TitleLabel.TabIndex = 5;
+            this.TitleLabel.Text = "Title";
+            // 
+            // LoginLabel
+            // 
+            this.LoginLabel.AutoSize = true;
+            this.LoginLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LoginLabel.Location = new System.Drawing.Point(143, 74);
+            this.LoginLabel.Name = "LoginLabel";
+            this.LoginLabel.Size = new System.Drawing.Size(43, 16);
+            this.LoginLabel.TabIndex = 6;
+            this.LoginLabel.Text = "Login";
+            // 
+            // AssociatedEmailLabel
+            // 
+            this.AssociatedEmailLabel.AutoSize = true;
+            this.AssociatedEmailLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AssociatedEmailLabel.Location = new System.Drawing.Point(297, 74);
+            this.AssociatedEmailLabel.Name = "AssociatedEmailLabel";
+            this.AssociatedEmailLabel.Size = new System.Drawing.Size(120, 16);
+            this.AssociatedEmailLabel.TabIndex = 7;
+            this.AssociatedEmailLabel.Text = "Associated Email";
+            // 
+            // PasswordLabel
+            // 
+            this.PasswordLabel.AutoSize = true;
+            this.PasswordLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.PasswordLabel.Location = new System.Drawing.Point(503, 74);
+            this.PasswordLabel.Name = "PasswordLabel";
+            this.PasswordLabel.Size = new System.Drawing.Size(68, 16);
+            this.PasswordLabel.TabIndex = 8;
+            this.PasswordLabel.Text = "Password";
             // 
             // MainForm
             // 
@@ -95,6 +139,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightYellow;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.PasswordLabel);
+            this.Controls.Add(this.AssociatedEmailLabel);
+            this.Controls.Add(this.LoginLabel);
+            this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.AccountsPanel);
             this.Controls.Add(this.SettingsButton);
             this.Controls.Add(this.ExportButton);
@@ -107,6 +155,7 @@
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,5 +168,9 @@
         private System.Windows.Forms.Button ExportButton;
         private System.Windows.Forms.Button SettingsButton;
         private System.Windows.Forms.Panel AccountsPanel;
+        private System.Windows.Forms.Label TitleLabel;
+        private System.Windows.Forms.Label LoginLabel;
+        private System.Windows.Forms.Label AssociatedEmailLabel;
+        private System.Windows.Forms.Label PasswordLabel;
     }
 }
