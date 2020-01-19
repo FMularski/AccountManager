@@ -60,7 +60,7 @@ namespace AccountManager.Forms
 
             List<string> emails = DBManager.GetColumnValuesWhere("Accounts", "Associated_Email", "UserId", DBManager.GetSingleValueWhere("Users", "Id", "Login", LoggedUser.Login).ToString());
 
-            List<string> passwords = DBManager.GetColumnValuesWhere("Accounts", "Password", "UserId", DBManager.GetSingleValueWhere("Users", "Id", "Login", LoggedUser.Login).ToString());
+            List<string> ids = DBManager.GetColumnValuesWhere("Accounts", "Id", "UserId", DBManager.GetSingleValueWhere("Users", "Id", "Login", LoggedUser.Login).ToString());
 
             for ( int i = 0; i < titles.Count; i++)
             {
@@ -82,15 +82,28 @@ namespace AccountManager.Forms
                 email.Location = new Point() { X = AssociatedEmailLabel.Location.X, Y = i * title.PreferredHeight * 2 };
                 AccountsPanel.Controls.Add(email);
 
-                Label password = new Label() { Text = passwords[i] };
+                Label password = new Label() { Text = "Click to show" };
                 password.AutoSize = true;
                 password.Font = new Font(new FontFamily("Century Gothic"), 9f);
                 password.Location = new Point() { X = PasswordLabel.Location.X, Y = i * title.PreferredHeight * 2 };
+                password.Click += Password_Click;
+                password.ImageIndex = Convert.ToInt32(ids[i]);
+                DisabledControls.Add(password);
+
                 AccountsPanel.Controls.Add(password);
 
 
 
             }
+        }
+
+        private void Password_Click(object sender, EventArgs e)
+        {
+            Label password = sender as Label;
+
+            PinForm pf = new PinForm(LoggedUser, password, DisabledControls, Password_Click);
+            pf.Show();
+            FormUtilities.DisableControls(DisabledControls.ToArray());
         }
     }
 }
