@@ -89,12 +89,46 @@ namespace AccountManager.Forms
                 password.Click += Password_Click;
                 password.ImageIndex = Convert.ToInt32(ids[i]);
                 DisabledControls.Add(password);
-
                 AccountsPanel.Controls.Add(password);
 
+                Button editButton = new Button();
+                editButton.Text = "Edit";
+                editButton.Font = new Font(new FontFamily("Century Gothic"), 9f);
+                editButton.BackColor = Color.White;
+                editButton.Location = new Point() { X = EditButtonsLabel.Location.X, Y = i * title.PreferredHeight * 2 };
+                editButton.Size = editButton.PreferredSize;
+                editButton.ImageIndex = Convert.ToInt32(ids[i]);
+                editButton.Click += EditButton_Click;
+                DisabledControls.Add(editButton);
+                AccountsPanel.Controls.Add(editButton);
 
-
+                Button deleteButton = new Button();
+                deleteButton.Text = "Delete";
+                deleteButton.Font = new Font(new FontFamily("Century Gothic"), 9f);
+                deleteButton.BackColor = Color.IndianRed;
+                deleteButton.ForeColor = Color.White;
+                deleteButton.Location = new Point() { X = DeleteButtonsLabel.Location.X, Y = i * title.PreferredHeight * 2 };
+                deleteButton.Size = deleteButton.PreferredSize;
+                editButton.ImageIndex = Convert.ToInt32(ids[i]);
+                DisabledControls.Add(deleteButton);
+                AccountsPanel.Controls.Add(deleteButton);
             }
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            Button editButton = sender as Button;
+            string[] accountData = {
+                DBManager.GetSingleValueWhere("Accounts", "Title", "Id", editButton.ImageIndex.ToString()),
+                DBManager.GetSingleValueWhere("Accounts", "Login", "Id", editButton.ImageIndex.ToString()),
+                DBManager.GetSingleValueWhere("Accounts", "Associated_Email", "Id", editButton.ImageIndex.ToString()),
+                DBManager.GetSingleValueWhere("Accounts", "Password", "Id", editButton.ImageIndex.ToString()),
+                editButton.ImageIndex.ToString() /* id */
+            };
+
+            AccountForm af = new AccountForm(AccountForm.Mode.Edit, LoggedUser, UpdateAccountsDisplay, DisabledControls, accountData);
+            af.Show();
+            FormUtilities.DisableControls(DisabledControls.ToArray());
         }
 
         private void Password_Click(object sender, EventArgs e)

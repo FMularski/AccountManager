@@ -26,7 +26,9 @@ namespace AccountManager
         public delegate void UpdateAccountDisplayDel();
         private UpdateAccountDisplayDel UpdateDisplay;
 
-        public AccountForm(Mode mode, User loggedUser, UpdateAccountDisplayDel callback, List<Control> controls)
+        private int EdittedAccountId;
+
+        public AccountForm(Mode mode, User loggedUser, UpdateAccountDisplayDel callback, List<Control> controls, string[] accountDataToEdit = null)
         {
             InitializeComponent();
             DisabledControls = controls;
@@ -34,10 +36,20 @@ namespace AccountManager
             _Mode = mode;
             LoggedUser = loggedUser;
 
-            AddEditAccountLabel.Text = "Add account";
-            this.Text = "Add account";
-            AddEditButton.Text = "Add";
+            AddEditAccountLabel.Text = _Mode == Mode.Add ? "Add account" : "Edit account";
+            this.Text = _Mode == Mode.Add ? "Add account" : "Edit account";
+            AddEditButton.Text = _Mode == Mode.Add ? "Add" : "Edit";
             UpdateDisplay = callback;
+
+            if (_Mode == Mode.Edit)
+            {
+                TitleTextBox.Text = accountDataToEdit[0];
+                LoginTextBox.Text = accountDataToEdit[1];
+                AssociatedEmailTextBox.Text = accountDataToEdit[2];
+                PasswordTextBox.Text = accountDataToEdit[3];
+                ConfirmTextBox.Text = accountDataToEdit[3];
+                EdittedAccountId = Convert.ToInt32(accountDataToEdit[4]);
+            }
         }
 
         private void AccountForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -88,11 +100,22 @@ namespace AccountManager
                 return;
             }
 
-
-            DBManager.AddAccount(title, login, associatedEmail, password, DBManager.GetSingleValueWhere("Users", "Id", "Login", LoggedUser.Login));
-            MessageBox.Show("Account has beed successfully added.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if ( _Mode == Mode.Add)
+            {
+                DBManager.AddAccount(title, login, associatedEmail, password, DBManager.GetSingleValueWhere("Users", "Id", "Login", LoggedUser.Login));
+                MessageBox.Show("Account has beed successfully added.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                DBManager.UpdateValueWhere("Accounts", "Title", title, "Id", EdittedAccountId.ToString());
+                DBManager.UpdateValueWhere("Accounts", "Login", login, "Id", EdittedAccountId.ToString());
+                DBManager.UpdateValueWhere("Accounts", "Associated_Email", associatedEmail, "Id", EdittedAccountId.ToString());
+                DBManager.UpdateValueWhere("Accounts", "Password", password, "Id", EdittedAccountId.ToString());
+                MessageBox.Show("Account has beed successfully editted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
+            
             this.Close();
-
             UpdateDisplay();
         }
     }

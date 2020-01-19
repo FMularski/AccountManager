@@ -38,6 +38,8 @@
             this.LoginLabel = new System.Windows.Forms.Label();
             this.AssociatedEmailLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
+            this.EditButtonsLabel = new System.Windows.Forms.Label();
+            this.DeleteButtonsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LoggedInAsLabel
@@ -90,7 +92,7 @@
             this.AccountsPanel.AutoScroll = true;
             this.AccountsPanel.Location = new System.Drawing.Point(0, 94);
             this.AccountsPanel.Name = "AccountsPanel";
-            this.AccountsPanel.Size = new System.Drawing.Size(788, 344);
+            this.AccountsPanel.Size = new System.Drawing.Size(800, 344);
             this.AccountsPanel.TabIndex = 4;
             // 
             // TitleLabel
@@ -133,12 +135,30 @@
             this.PasswordLabel.TabIndex = 8;
             this.PasswordLabel.Text = "Password";
             // 
+            // EditButtonsLabel
+            // 
+            this.EditButtonsLabel.AutoSize = true;
+            this.EditButtonsLabel.Location = new System.Drawing.Point(645, 77);
+            this.EditButtonsLabel.Name = "EditButtonsLabel";
+            this.EditButtonsLabel.Size = new System.Drawing.Size(0, 13);
+            this.EditButtonsLabel.TabIndex = 9;
+            // 
+            // DeleteButtonsLabel
+            // 
+            this.DeleteButtonsLabel.AutoSize = true;
+            this.DeleteButtonsLabel.Location = new System.Drawing.Point(722, 76);
+            this.DeleteButtonsLabel.Name = "DeleteButtonsLabel";
+            this.DeleteButtonsLabel.Size = new System.Drawing.Size(0, 13);
+            this.DeleteButtonsLabel.TabIndex = 10;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightYellow;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DeleteButtonsLabel);
+            this.Controls.Add(this.EditButtonsLabel);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.AssociatedEmailLabel);
             this.Controls.Add(this.LoginLabel);
@@ -172,5 +192,7 @@
         private System.Windows.Forms.Label LoginLabel;
         private System.Windows.Forms.Label AssociatedEmailLabel;
         private System.Windows.Forms.Label PasswordLabel;
+        private System.Windows.Forms.Label EditButtonsLabel;
+        private System.Windows.Forms.Label DeleteButtonsLabel;
     }
 }
